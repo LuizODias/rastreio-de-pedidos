@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "module": "esnext",
+    "resolveJsonModule": true,
+    "target": "es5",
+    "outDir": "./build/",
+    "lib": ["dom", "ES2020"],
+    "types": ["node", "react", "jest"],
+    "sourceMap": true,
+    "strictNullChecks": true,
+    "moduleResolution": "node",
+    "downlevelIteration": true,
+    "jsx": "react",
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": "./",
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "noImplicitAny": false
+  },
+  "exclude": ["node_modules", "build"],
+  "include": ["src"]
+}

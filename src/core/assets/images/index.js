@@ -1,0 +1,6 @@
+export { default as Processed } from './processado.png'
+export { default as Delivered } from './entregue.png'
+export { default as Dispatched } from './despachado.png'
+export { default as Wayed } from './caminho.png'
+export { default as Checked } from './check.png'
+export { default as Circle } from './circle.png'
