@@ -6,8 +6,10 @@ interface IStatusResponse {
 }
 
 export function getStatus(
-  pedidoId: string,
-  rastreioCod: string
-): Promise<IStatusResponse> {
-  return api.get(`/pedido?pedidoId=${pedidoId}`)
+  pedidoId: String | undefined,
+  rastreioCod: String | undefined
+): Promise<any> {
+  return api.get(
+    `/acompanhapedido/pedidoId=${pedidoId}/codigoId=${rastreioCod}`
+  )
 }

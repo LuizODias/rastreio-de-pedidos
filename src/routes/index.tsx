@@ -1,4 +1,4 @@
-import { BrowserRouter as Router } from 'react-router-dom'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 import React from 'react'
 import { Header, Home } from '../containers'
 import { connect } from 'react-redux'
@@ -6,13 +6,12 @@ import { connect } from 'react-redux'
 function Routes() {
   return (
     <Router>
-      <Header />
-      <Home />
+      {/* <Header /> */}
+      <Route exact path="/consulta/:order/:tracker" component={Home} />
     </Router>
   )
 }
 
-// eslint-disable-next-line
-const mapStateToProps = ({}) => ({})
+const mapStateToProps = () => ({})
 
 export default connect(mapStateToProps)(Routes)

@@ -1,9 +1,17 @@
-import axios, { AxiosInstance } from 'axios'
+import axios from 'axios'
 import { defaultsDeep } from 'lodash'
 import { configs } from '../configs/configs'
 
+const username = ''
+const password = ''
+
 const getConfig = () => ({
   baseURL: configs.baseUrl,
+  headers: {
+    Authorization: `Basic ${btoa(`${username}:${password}`)}`,
+    'Content-Type': 'application/x-www-form-urlencoded',
+    tenantId: '04,04',
+  },
 })
 
 const api = axios.create()

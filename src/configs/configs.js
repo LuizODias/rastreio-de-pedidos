@@ -1,3 +1,3 @@
 export const configs = {
-  baseUrl: 'https://backend/api',
+  baseUrl: 'http://187.95.99.91:2709/rest/index',
 }
