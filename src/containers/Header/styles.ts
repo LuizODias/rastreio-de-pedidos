@@ -3,7 +3,7 @@ import { Menu } from '@material-ui/core'
 import { NavLink } from 'react-router-dom'
 
 export const HeaderStyled = styled.div`
-  background: ${({ theme }) => theme.color.primary};
+  background: ${({ theme }) => theme.color.primaryDark};
   min-height: 71px;
   display: flex;
   align-items: center;

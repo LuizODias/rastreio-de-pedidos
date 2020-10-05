@@ -1,3 +1,7 @@
 export interface IData {
-  status: string
+  error: Boolean
+  despachado: Boolean
+  entregue: Boolean
+  processado: Boolean
+  transito: Boolean
 }

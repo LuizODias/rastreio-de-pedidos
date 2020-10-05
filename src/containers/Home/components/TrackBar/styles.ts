@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components'
+import styled, { css, keyframes } from 'styled-components'
 import {
   Checked as CheckedImg,
   Circle as CircleImg,
@@ -10,7 +10,7 @@ interface IProps {
 }
 
 export const TrackingProgressBarItem = styled.div<IProps>`
-  margin: 2% 4% 0% 4%;
+  margin: 2% 4%;
 
   &.item {
     background: #e5e7ed;
@@ -30,8 +30,13 @@ export const TrackingProgressBarItem = styled.div<IProps>`
     ${({ active }) =>
       active &&
       css`
-        background: #093782;
-        color: #fff;
+        background: ${({ theme }) => theme.color.primaryDark};
+        color: ${({ theme }) => theme.color.white};
+        opacity: 1;
+        animation-name: ${animationName};
+        animation-iteration-count: 1;
+        animation-timing-function: ease-in;
+        animation-duration: 1s;
       `}
 
     ${({ first }) =>
@@ -40,6 +45,15 @@ export const TrackingProgressBarItem = styled.div<IProps>`
         margin-left: 0;
       `}
   }
+`
+
+const animationName = keyframes`
+  0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 `
 
 export const TrackingProgressBarItemBar = styled.span<IProps>`
@@ -54,7 +68,12 @@ export const TrackingProgressBarItemBar = styled.span<IProps>`
     ${({ active }) =>
       active &&
       css`
-        background: #093782;
+        background: ${({ theme }) => theme.color.primary};
+        opacity: 1;
+        animation-name: ${animationName};
+        animation-iteration-count: 1;
+        animation-timing-function: ease-in;
+        animation-duration: 2s;
       `}
   }
 `

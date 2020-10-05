@@ -8,5 +8,4 @@ export const SpanNumber = styled.span`
 export const Order = styled.div`
   font-size: 1.5em;
   padding-right: 13% !important;
-  color: ${({ theme }) => theme.color.primary};
 `

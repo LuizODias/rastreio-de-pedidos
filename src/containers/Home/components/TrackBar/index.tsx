@@ -8,29 +8,50 @@ import {
 
 const TrackBar = ({ active }) => {
   return (
-    <TrackingProgressBarItem>
-      <TrackingProgressBarItem className="item" first active={active}>
-        {active ? <Checked /> : <Circle />}
-      </TrackingProgressBarItem>
+    <>
+      {active?.error ? (
+        <TrackingProgressBarItem>
+          ERRO! Não conseguimos achar nenhum pedido com esses dados.{' '}
+        </TrackingProgressBarItem>
+      ) : (
+        <TrackingProgressBarItem>
+          <TrackingProgressBarItem
+            className="item"
+            first
+            active={active.processado}
+          >
+            {active.processado ? <Checked /> : <Circle />}
+          </TrackingProgressBarItem>
 
-      <TrackingProgressBarItemBar className="bar" active={active} />
+          <TrackingProgressBarItemBar
+            className="bar"
+            active={active.despachado}
+          />
 
-      <TrackingProgressBarItem className="item" active={active}>
-        {active ? <Checked /> : <Circle />}
-      </TrackingProgressBarItem>
+          <TrackingProgressBarItem className="item" active={active.despachado}>
+            {active.despachado ? <Checked /> : <Circle />}
+          </TrackingProgressBarItem>
 
-      <TrackingProgressBarItemBar className="bar" active={active} />
+          <TrackingProgressBarItemBar
+            className="bar"
+            active={active.transito}
+          />
 
-      <TrackingProgressBarItem className="item" active={active}>
-        {active ? <Checked /> : <Circle />}
-      </TrackingProgressBarItem>
+          <TrackingProgressBarItem className="item" active={active.transito}>
+            {active.transito ? <Checked /> : <Circle />}
+          </TrackingProgressBarItem>
 
-      <TrackingProgressBarItemBar className="bar" />
+          <TrackingProgressBarItemBar
+            className="bar"
+            active={active.entregue}
+          />
 
-      <TrackingProgressBarItem className="item">
-        {!active ? <Checked /> : <Circle />}
-      </TrackingProgressBarItem>
-    </TrackingProgressBarItem>
+          <TrackingProgressBarItem className="item" active={active.entregue}>
+            {active.entregue ? <Checked /> : <Circle />}
+          </TrackingProgressBarItem>
+        </TrackingProgressBarItem>
+      )}
+    </>
   )
 }
 

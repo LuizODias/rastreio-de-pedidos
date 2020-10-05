@@ -6,7 +6,7 @@ import { connect } from 'react-redux'
 function Routes() {
   return (
     <Router>
-      {/* <Header /> */}
+      <Header />
       <Route exact path="/consulta/:order/:tracker" component={Home} />
     </Router>
   )
