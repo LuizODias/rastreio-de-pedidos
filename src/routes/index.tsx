@@ -7,7 +7,7 @@ function Routes() {
   return (
     <Router>
       <Header />
-      <Route exact path="/consulta/:order/:tracker" component={Home} />
+      <Route exact path="/consulta" component={Home} />
     </Router>
   )
 }

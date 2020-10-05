@@ -1,14 +1,14 @@
 import React from 'react'
 import { Order, SpanNumber } from './styles'
 
-const TrackOrder = ({ orderNumber, codTracker }) => {
+const TrackOrder = ({ orderNumber, codClient }) => {
   return (
     <>
       <Order>
         Pedido: <SpanNumber> #{orderNumber} </SpanNumber>
       </Order>
       <Order>
-        Código de rastreio: <SpanNumber> #{codTracker} </SpanNumber>
+        Código do Cliente: <SpanNumber> #{codClient} </SpanNumber>
       </Order>
     </>
   )

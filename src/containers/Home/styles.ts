@@ -32,14 +32,14 @@ const animationName = keyframes`
 `
 
 export const Loading = styled.div`
-  border: 16px solid #f3f3f3;
+  border: 16px solid #666667;
   border-top: 16px solid ${({ theme }) => theme.color.primary};
   border-radius: 50%;
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  height: 100px;
   animation: ${animationName} 1s linear infinite;
 `
 
 export const DivLoading = styled.div`
-  margin: 0% 44.5%;
+  margin: 8% 44.5%;
 `

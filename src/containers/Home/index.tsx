@@ -13,15 +13,24 @@ function Home(props) {
     transito: Boolean
   }>()
   const [loading, setLoading] = useState<Boolean>(true)
+  const [tenant, setTenant] = useState<String>('')
+  const [order, setOrder] = useState<String>('')
+  const [client, setClient] = useState<String>('')
 
-  const { match } = props
-  let { order, tracker } = match.params
+  const { location } = props
+  const { search } = location
+  const urlParams = new URLSearchParams(search)
 
   const setNumbers = async () => {
     try {
       setLoading(true)
+
+      setTenant(urlParams.get('tenant')!)
+      setOrder(urlParams.get('order')!)
+      setClient(urlParams.get('client')!)
+
       if (order) {
-        setStatusOrder(await getStatus(order, tracker))
+        setStatusOrder(await getStatus(tenant, order, client))
       }
     } catch (error) {
       setStatusOrder({
@@ -39,16 +48,18 @@ function Home(props) {
   useEffect(() => {
     setNumbers()
     // eslint-disable-next-line
-  }, [tracker])
+  }, [client])
 
   return (
     <Container>
       <Card>
-        <TrackOrder orderNumber={order} codTracker={tracker} />
-        <TrackImg />
-        <TrackMsg />
-        {!loading ? (
-          <TrackBar active={statusOrder} />
+        {!loading && statusOrder ? (
+          <>
+            <TrackOrder orderNumber={order} codClient={client} />
+            <TrackImg />
+            <TrackMsg />
+            <TrackBar active={statusOrder} />
+          </>
         ) : (
           <DivLoading>
             <Loading />

@@ -1,7 +1,11 @@
 import api from './api'
 
-export function getStatus(pedidoId: String, rastreioCod: String): Promise<any> {
+export function getStatus(
+  tenantid: String,
+  pedidoId: String,
+  clienteCod: String
+): Promise<any> {
   return api.get(`/acompanhapedido/`, {
-    headers: { tenantId: `${pedidoId},${rastreioCod}` },
+    headers: { tenantId: tenantid, pedido: pedidoId, cliente: clienteCod },
   })
 }
